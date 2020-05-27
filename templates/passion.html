@@ -1,0 +1,36 @@
+﻿{%  extends "base.html" %}
+
+{% load static %}
+
+{%  block main %}
+
+<div class="page-content p-5" id="content">
+<h1>Ajouter un nouveau patient</h1>
+<br>
+<p>
+<form method="post" enctype="multipart/form-data" action=".">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit"/>
+</form>
+</p>
+
+{% if sauvegarde %}
+{% endif %}
+
+<br><br>
+<h1>diagnostic</h1>
+<br>
+{% for passion in passions %}
+    <img src="{{ passion.photo.url }}" height = "50%" width = "50%">
+    <a href="{% url 'prediction' %}" class="btn btn-info" role="button">Voir le résultat du diagnostic</a>
+{% endfor %}
+
+<br><br><br><br><br><br><br><br><br><br>
+
+
+    <p align="right">@Réaliser par Mustafa Hiri</p>
+
+</div>
+<!-- End demo content -->
+{%  endblock %}

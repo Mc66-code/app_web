@@ -1,0 +1,30 @@
+{%  extends "base.html" %}
+
+{% load static %}
+
+{%  block main %}
+<div class="page-content p-5" id="content">
+
+
+<br><br>
+
+Selon notre algorithme :
+<UL>
+
+<LI>  
+<th>resultat du diagnostic : {{ inf }} </th>
+<LI> <th>cette application est developpee par les techniques de machine learning.</th>
+<LI> <th>le resultat de notre Application est base sur des donnees que nous avons collectees et traitees sur le site Kaggle  (<a href="https://www.kaggle.com/tawsifurrahman/covid19-radiography-database">le lien de la Data Set</a>)</th>
+<LI> <th>les performances de notre algorithme ont obtenu une precision de 91,67% sur les donnees de validation.</th>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <p align="right">@Realiser par Mustafa Hiri</p>
+
+</UL>
+
+</div>
+
+{%  endblock %}
+
