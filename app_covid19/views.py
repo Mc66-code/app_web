@@ -24,7 +24,8 @@ def passion(request):
 from PIL import Image
 import numpy as np
 import cv2
-from keras.models import load_model
+#from keras.models import load_model
+import pickle
 # from keras import backend as K
 
 def prediction(request):
@@ -34,7 +35,8 @@ def prediction(request):
     image = np.array(image)
     image = cv2.resize(image,(224, 224))
     class_names = ['Covid19','Normal','Viral Pneumonia']
-    model = load_model('model_.h5')
+    #model = load_model('model_.h5')
+    model = pickle.load(open('model_saved.sav','rb'))
     y_predict = model.predict(image.reshape(1,224,224,3))
     y_pred = np.argmax(y_predict)
     label = class_names[y_pred] 
